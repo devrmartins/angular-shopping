@@ -1,5 +1,3 @@
-import { Module } from "module";
-
 export class Recipe {
     public name: string;
     public description: string;
