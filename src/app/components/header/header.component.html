@@ -2,25 +2,24 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="#" class="navbar-brand">Recipe Book</a>
+            <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+                <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+            </button>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Recipes</a>
-                </li>
-                <li>
-                    <a href="#">Shopping List</a>
-                </li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Shopping List</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item dropdown">
-                    <a id="manageDropdown" href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="dropdown" [class.open]="manageMenuOpened" (window:resize)="manageMenuOpened = false">
+                    <a id="manageDropdown" href="#" class="dropdown-toggle" (click)="manageMenuOpened = manageMenuOpened == false ? true : false"> 
                         Manage <span class="caret"></span>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="manageDropdown">
-                        <a class="dropdown-item" href="#">Save Data</a>
-                        <a class="dropdown-item" href="#">Fetch Data</a>
-                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Save Data</a></li>
+                        <li><a href="#">Fetch Data</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
