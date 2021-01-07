@@ -1,0 +1,39 @@
+.recipe {
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  width: 30vw;
+}
+
+.recipe .recipe-img {
+  border-radius: 10px 10px 0 0;
+}
+
+.recipe .body {
+  padding: 10px;
+}
+
+.recipe .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.recipe .title h2 {
+  flex: 1;
+  font-size: 2rem;
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.recipe .description {
+  width: 100%;
+  white-space: wrap;
+}
+
+.recipe .ingredients {
+  padding-top: 10px;
+  margin-top: 15px;
+  border-top: 1px solid #e2e2e2;
+}
